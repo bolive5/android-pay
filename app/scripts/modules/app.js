@@ -67,8 +67,7 @@ export default class App {
         this._confirmationView.visible = false;
         this._paymentForm.visible = false;
         let _promise;
-        // TODO Android Pay 3.1 - Check for PaymentRequest availability
-        if (false) {
+        if (window.PaymentRequest) {
           let api = new PaymentAPIWrapper();
           _promise = api.checkout(this._cart);
         } else {
